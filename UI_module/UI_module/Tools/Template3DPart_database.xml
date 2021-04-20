@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+=======================================================================
+ 
+    Copyright 2018 Siemens Product Lifecycle Management Software Inc.
+
+                        All Rights Reserved.
+
+=======================================================================
+
+    This is the sample XML configuration file used with native TDP batch
+    processing to publish a 3D PDF TDP.
+
+    The XML file is validated against PublishTDPNativeOptions.xsd. The XML 
+    standard can be found in http://www.w3.org/XML/Schema.
+
+=======================================================================
+-->
+<native_run>
+  <!--
+  The following run will publish a 3D PDF TDP with:
+    - A set of parts defined in ${UGII_BASE_DIR}\tdp\batch example\parts.txt
+    - A template part at ${UGII_BASE_DIR}\tdp\templates\A4_Size_part_portrait_3dpdf.prt
+    - No output directory specified. This will use the output directory specified in
+        the NX customer default. This directory MUST have write access.
+    - With all views published
+    - With no STEP attachment
+    - With a password of 123456
+    - With no JT attachment
+    - With model accuracy at Maximum
+    - With no compression to the model
+    - With overridden background and pmi color
+  -->
+  <publish_3DPDF>
+    <dataset>D:\00_Datenbank-Fertigbarkeitsanalyse\BuildPDFs\parts.txt</dataset>
+    <template_part>D:\04_Arbeitsordner_lokal_sync\feasibility_analysis_integrateBokeh\feasibility_analysis\UI_module\UI_module\Tools\Template3DPart_database.prt</template_part>
+    <output_directory>D:\00_Datenbank-Fertigbarkeitsanalyse\01_PhysicalData\9a8d12dc-02b0-4208-86d3-9bf1d2e7fbb6\00000</output_directory> 
+    <views>All Views</views>
+    <generate_step>false</generate_step>
+    <generate_jt>false</generate_jt>
+    <accuracy>Maximum</accuracy>
+    <compression>true</compression>
+    <override_properties>
+      <override_colors>true</override_colors>
+      <background_color>1</background_color>
+      <pmi_color>216</pmi_color>    
+    </override_properties>
+  </publish_3DPDF>
+</native_run>

@@ -1,0 +1,10 @@
+{
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.pythonPath": "C:\\Python3\\env\\zink\\Scripts\\python.exe",
+    "jupyter.debugJustMyCode": false,
+    // "python.linting.pylintArgs": [
+    //     "--rcfile=",
+    //     "init-hook='import sys; sys.path.append('${workspaceFolder}')'"
+    // ]
+}

@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>176320ea-8edb-45cd-bd7f-60b66691e776</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>MainProgram_Analysis.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>UI_module</Name>
+    <RootNamespace>UI_module</RootNamespace>
+    <InterpreterId>Global|PythonCore|3.5</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Analysis\Evaluation\Data_Evaluation.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Analysis\Import\Assembly_Function.py" />
+    <Compile Include="Analysis\Import\Box_Function.py" />
+    <Compile Include="Analysis\Import\Create_CAD_Datafile.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Analysis\Pytable\Detail_Comparism\AA_Data_creation.py" />
+    <Compile Include="Analysis\Pytable\Detail_Comparism\CC_Evaluation_of_Data.py" />
+    <Compile Include="Analysis\Pytable\Detail_Comparism\C_PyTables_Funktionen\Pytables_Class.py" />
+    <Compile Include="Analysis\Pytable\Detail_Comparism\C_PyTables_Funktionen\utility.py" />
+    <Compile Include="Analysis\Pytable\Detail_Comparism\C_PyTables_Funktionen\Work_Functions.py" />
+    <Compile Include="Analysis\Pytable\Detail_Comparism\C_PyTables_Funktionen\__init__.py" />
+    <Compile Include="Analysis\Pytable\Detail_Comparism\DD_Procrustes_Commandeur.py" />
+    <Compile Include="Analysis\Pytable\Detail_Comparism\EE_ICP.py" />
+    <Compile Include="Analysis\Pytable\Detail_Comparism\EE_OpenCV_Surface_Matching.py" />
+    <Compile Include="Analysis\Pytable\Detail_Comparism\EE_PPF3DDetector.py" />
+    <Compile Include="Analysis\Pytable\Detail_Comparism\EE_PPF3D_Zink.py" />
+    <Compile Include="Analysis\Pytable\Detail_Comparism\Evaluation_Curvaturedata.py" />
+    <Compile Include="Analysis\Pytable\Detail_Comparism\Global_Variables.py" />
+    <Compile Include="Analysis\Pytable\Detail_Comparism\Table_Classes.py" />
+    <Compile Include="Analysis\Pytable\Detail_Comparism\__init__.py" />
+    <Compile Include="Analysis\Import\Info_Sheet_create.py" />
+    <Compile Include="Analysis\Import\Multiprocessing_Reading.py" />
+    <Compile Include="Analysis\Import\PointCloud_Function.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Analysis\Import\Surfaces_Function.py" />
+    <Compile Include="Analysis\Import\Images_Function.py" />
+    <Compile Include="Analysis\Pytable\Pytables_Feature_Analysis.py" />
+    <Compile Include="Analysis\Pytable\Pytables_Management_Functions.py" />
+    <Compile Include="Analysis\Pytable\Work_Functions.py" />
+    <Compile Include="AssemblyInfo.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GlobalVariables.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GUI\parts_listview_functions.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainProgram_Analysis.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartInfo.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IO.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GUI\UI_module.py" />
+    <Compile Include="Analysis\Utility.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|PythonCore|3.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Analysis\Import\" />
+    <Folder Include="Analysis\Evaluation\" />
+    <Folder Include="Analysis\Pytable\" />
+    <Folder Include="Analysis\Pytable\Detail_Comparism\" />
+    <Folder Include="Analysis\Pytable\Detail_Comparism\C_PyTables_Funktionen\" />
+    <Folder Include="Analysis\Pytable\Detail_Comparism\C_PyTables_Funktionen\__pycache__\" />
+    <Folder Include="GUI\" />
+    <Folder Include="Analysis\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Analysis\Pytable\Detail_Comparism\C_PyTables_Funktionen\__pycache__\Pytables_Class.cpython-35.pyc" />
+    <Content Include="Analysis\Pytable\Detail_Comparism\C_PyTables_Funktionen\__pycache__\utility.cpython-35.pyc" />
+    <Content Include="Analysis\Pytable\Detail_Comparism\C_PyTables_Funktionen\__pycache__\Work_Functions.cpython-35.pyc" />
+    <Content Include="Analysis\Pytable\Detail_Comparism\C_PyTables_Funktionen\__pycache__\__init__.cpython-35.pyc" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>

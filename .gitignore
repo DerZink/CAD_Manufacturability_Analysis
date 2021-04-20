@@ -1,0 +1,9 @@
+00_Debug/
+01_Release/
+bin/
+obj/
+packages/
+.vs/
+__pycache__/
+UI_module/UI_module/GUI/__pycache__/
+*.txt

@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"search.quickOpen.includeSymbols": true,
+		"search.smartCase": true,
+		"python.pythonPath": "C:\\Python3\\env\\zink\\Scripts\\python.exe",
+		"python.dataScience.debugJustMyCode": false
+	}
+}
