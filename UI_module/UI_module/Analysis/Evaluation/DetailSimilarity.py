@@ -42,10 +42,10 @@ from Shared.Preferences import calcPrefClass, detailColumnsClass
 
 class CalcDetailSimilarity(QtCore.QObject):
     """Class for calculation of detail similarity of point clouds
-        Input:
-                - Global paths as PathsClass
-                - Detail features
-                - calculation preferences"""
+    Input:
+            - Global paths as PathsClass
+            - Detail features
+            - calculation preferences"""
 
     updateDatabase = Signal(bool)
 
@@ -131,9 +131,9 @@ class CalcDetailSimilarity(QtCore.QObject):
         self.RoughTransformationCalc = RoughTransformationCalc(self.calcPrefs)
 
     def start(self):
-        """ Start calculation:
-            First point clouds of parts must be orientated best to each other
-            Second differences between parts can be measured"""
+        """Start calculation:
+        First point clouds of parts must be orientated best to each other
+        Second differences between parts can be measured"""
         # ptvsd.debug_this_thread()
         for part_a in self.partInputList:
             print("DetailCalc a = {}".format(part_a.getTotalID()))
@@ -171,7 +171,9 @@ class CalcDetailSimilarity(QtCore.QObject):
         return GS_PartPairclass_list[0]
 
     def start_forCalibration(
-        self, parts_b: List[PartInfoClass], distanceRating: bool = False,
+        self,
+        parts_b: List[PartInfoClass],
+        distanceRating: bool = False,
     ):
         GS_PartPairclass_list = []
         for partPos, part_a in enumerate(self.partInputList):

@@ -222,7 +222,9 @@ class TransformationFunctions:
         return Pose
 
     @staticmethod
-    def poseToRT(_Pose,) -> Tuple[np.ndarray, np.ndarray]:
+    def poseToRT(
+        _Pose,
+    ) -> Tuple[np.ndarray, np.ndarray]:
         R = TransformationFunctions.poseToR(_Pose)
         t = _Pose[:3, 3:4].reshape(3)
         return R, t
@@ -741,7 +743,7 @@ class PointCloudFunctions:
 
     @staticmethod
     def rigitMotion(P_is, Q_is, sampling_distanceHash):
-        """Rigit motion from p to q 
+        """Rigit motion from p to q
         Input:  P_is, Q_is: np.array([
                                     [point1_x, point1_y, point1_z]
                                     [point2_x, point2_y, point2_z]
@@ -830,12 +832,12 @@ class PointCloudFunctions:
 
     @staticmethod
     def poseHash(pose: TransformationClass):
-        """ Hash for pose definition.
-            Replaces:
-                d_t = pose.t - pose_new.t
-                d_norm = np.linalg.norm(d_t)
-                d_axis = pose.axis_R - pose_new.axis_R
-                d_angle = math.fabs(pose.angle - pose_new.angle)"""
+        """Hash for pose definition.
+        Replaces:
+            d_t = pose.t - pose_new.t
+            d_norm = np.linalg.norm(d_t)
+            d_axis = pose.axis_R - pose_new.axis_R
+            d_angle = math.fabs(pose.angle - pose_new.angle)"""
 
         sample_translation = 1
         sample_axes = 10 * np.pi / 180

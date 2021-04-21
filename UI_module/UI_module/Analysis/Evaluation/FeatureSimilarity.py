@@ -19,9 +19,9 @@ from Shared.Preferences import calcPrefClass
 
 class CalcFeatureSimilarity(QtCore.QObject):
     """Class for calculation of feature similarity in H5 data (PyTables)
-        Input:
-                - Global paths as PathsClass
-                - Similarity features"""
+    Input:
+            - Global paths as PathsClass
+            - Similarity features"""
 
     updateDatabase = Signal(bool)
 

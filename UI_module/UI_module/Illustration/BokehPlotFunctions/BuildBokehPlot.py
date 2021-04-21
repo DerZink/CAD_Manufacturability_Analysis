@@ -182,12 +182,15 @@ class BokehPlot:
             nameSplit = name.decode("utf-8").rpartition("_")
             assemblyID, partID = (nameSplit[0], nameSplit[2])
             if self.absPath == False:
-                pathArray[i] = "./" + os.path.join(
-                    self.paths.name_physicaldatabase,
-                    assemblyID,
-                    partID,
-                    partID + "_" + self.paths.namedata_image,
-                ).replace("\\", "/")
+                pathArray[i] = (
+                    "./"
+                    + os.path.join(
+                        self.paths.name_physicaldatabase,
+                        assemblyID,
+                        partID,
+                        partID + "_" + self.paths.namedata_image,
+                    ).replace("\\", "/")
+                )
             else:
                 pathArray[i] = os.path.join(
                     self.paths.path_physicaldatabase,
@@ -574,7 +577,9 @@ class BokehPlot:
         )
         return changeJS
 
-    def callback_colorDataChange(self,):
+    def callback_colorDataChange(
+        self,
+    ):
 
         stringFile = open(os.path.join(self.bokehPath, "ColorChange.js"), "r")
 

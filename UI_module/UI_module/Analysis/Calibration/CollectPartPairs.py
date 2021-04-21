@@ -189,7 +189,9 @@ def bodyPairComparison(
 def savePickledBodyPairs(filePath, data):
     pickleGSPairs = open(filePath, "wb")
     _pi.dump(
-        (data), pickleGSPairs, _pi.HIGHEST_PROTOCOL,
+        (data),
+        pickleGSPairs,
+        _pi.HIGHEST_PROTOCOL,
     )
     pickleGSPairs.close()
 

@@ -229,10 +229,12 @@ class Feature_Similarity_Class(Work_Functions_Class):
         )
 
     def __generateStr_referencedCalc(self, categoryTuple: Tuple[str, float]) -> str:
-        pytables_calc_string = "where(abs({0} - {1}) >= {1}, 0 , (1 - abs({0} - {1}) / {1}) * {2})".format(
-            categoryTuple[0],
-            self.featuresPart[categoryTuple[0]],
-            categoryTuple[1] * self.weightOfCategories,
+        pytables_calc_string = (
+            "where(abs({0} - {1}) >= {1}, 0 , (1 - abs({0} - {1}) / {1}) * {2})".format(
+                categoryTuple[0],
+                self.featuresPart[categoryTuple[0]],
+                categoryTuple[1] * self.weightOfCategories,
+            )
         )
         return pytables_calc_string
 

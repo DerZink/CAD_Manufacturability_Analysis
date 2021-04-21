@@ -268,7 +268,8 @@ class CalibrationGeometricSimilarity(QtCore.QObject):
                 self.part_b_list, distanceRating=True
             )
             self.__savePartPairs__(
-                self.paths.gs_calibrationpairs, (self.GS_BodyPairclass_list),
+                self.paths.gs_calibrationpairs,
+                (self.GS_BodyPairclass_list),
             )
 
         self.FEM_BodyPairclass_list = self.__loadPartPairs__(
@@ -294,7 +295,9 @@ class CalibrationGeometricSimilarity(QtCore.QObject):
     def __savePartPairs__(self, filePath, data):
         pickleGSPairs = open(filePath, "wb")
         _pi.dump(
-            (data), pickleGSPairs, _pi.HIGHEST_PROTOCOL,
+            (data),
+            pickleGSPairs,
+            _pi.HIGHEST_PROTOCOL,
         )
         pickleGSPairs.close()
 
@@ -413,7 +416,9 @@ class CalibrationGeometricSimilarity(QtCore.QObject):
 
     @staticmethod
     def buildSimilarityVector(
-        x, GS_BodyPairclass_list: List[GS_PartPairclass], numberOfPartPairs: int,
+        x,
+        GS_BodyPairclass_list: List[GS_PartPairclass],
+        numberOfPartPairs: int,
     ):
         similarityValues = np.empty(numberOfPartPairs)
 

@@ -238,13 +238,13 @@ class Detail_Transformation_Class(Pytables_Update_Class):
         Tuple[str, str],
         Tuple[Tuple[np.ndarray, np.ndarray], Tuple[np.ndarray, np.ndarray], bool],
     ]:
-        """Output = { 
-                (PartID_0, PartID_1): (
-                    ( Translation_0 (3,), Translation_1 (3,) ),
-                    ( Rotation_0 (3,3), Rotation_1 (3,3) ),
-                    bool existence of overlay file
-                )
-            }"""
+        """Output = {
+            (PartID_0, PartID_1): (
+                ( Translation_0 (3,), Translation_1 (3,) ),
+                ( Rotation_0 (3,3), Rotation_1 (3,3) ),
+                bool existence of overlay file
+            )
+        }"""
 
         part_a_List = []
         part_b_List = []
@@ -307,13 +307,13 @@ class Detail_Transformation_Class(Pytables_Update_Class):
         Tuple[str, str],
         Tuple[Tuple[np.ndarray, np.ndarray], Tuple[np.ndarray, np.ndarray], bool],
     ]:
-        """Output = { 
-                (PartID_0, PartID_1): (
-                    ( Translation_0 (3,), Translation_1 (3,) ),
-                    ( Rotation_0 (3,3), Rotation_1 (3,3) ),
-                    bool existence of overlay file
-                )
-            }"""
+        """Output = {
+            (PartID_0, PartID_1): (
+                ( Translation_0 (3,), Translation_1 (3,) ),
+                ( Rotation_0 (3,3), Rotation_1 (3,3) ),
+                bool existence of overlay file
+            )
+        }"""
 
         conditions_Str = self.__partPairConditions(partPairs)
 

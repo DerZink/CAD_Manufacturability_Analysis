@@ -71,7 +71,8 @@ class GS_PartPairclass(object):
         self.poses_b = poses_b
 
     def check_poses(
-        self, _poses,  # can be pose clusters or poses
+        self,
+        _poses,  # can be pose clusters or poses
     ) -> List[TransformationClass]:
 
         poses_ranked = [0] * len(_poses)
@@ -240,7 +241,10 @@ class GS_PartPairclass(object):
         poseClusters_ = copy.deepcopy(poseClusters)
         fineTransformationClass = FineTransformationCalc(self.calcPrefs)
         finePoseClusters = fineTransformationClass.start(
-            self.cloudPoints_a, self.cloudPoints_b_save, self.normals_a, poseClusters_,
+            self.cloudPoints_a,
+            self.cloudPoints_b_save,
+            self.normals_a,
+            poseClusters_,
         )
         finePoseClusters_sorted = self.check_poses(finePoseClusters)
         return finePoseClusters_sorted
@@ -397,7 +401,12 @@ class GS_PartPairclass(object):
         anglesBoxSurf_BoxCenter = (
             np.arctan2(
                 np.linalg.norm(
-                    np.cross(vectorsBoxSurf, vectorsBoxCenter, axisa=1, axisb=1,),
+                    np.cross(
+                        vectorsBoxSurf,
+                        vectorsBoxCenter,
+                        axisa=1,
+                        axisb=1,
+                    ),
                     axis=1,
                 ),
                 np.einsum("ij,ij->i", vectorsBoxSurf, vectorsBoxCenter),
@@ -411,7 +420,13 @@ class GS_PartPairclass(object):
         anglesNorms_BoxSurf = (
             np.arctan2(
                 np.linalg.norm(
-                    np.cross(normals, vectorsBoxSurf, axisa=1, axisb=1,), axis=1,
+                    np.cross(
+                        normals,
+                        vectorsBoxSurf,
+                        axisa=1,
+                        axisb=1,
+                    ),
+                    axis=1,
                 ),
                 np.einsum("ij,ij->i", normals, vectorsBoxSurf),
             )

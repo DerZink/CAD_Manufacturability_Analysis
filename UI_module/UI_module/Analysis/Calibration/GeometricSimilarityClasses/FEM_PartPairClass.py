@@ -210,7 +210,8 @@ class FEM_BodyPairClass:
             return 1e40
 
         return np.average(
-            self.shear_rated ** x[1], weights=(self.distances_rated) ** x[0],
+            self.shear_rated ** x[1],
+            weights=(self.distances_rated) ** x[0],
         )
 
     def calcManufacturabilityMean(self, x=(1, 1)):

@@ -240,7 +240,18 @@ class partsOverlay_Class(QtCore.QObject):
 
             return outputDict[(self.part_a.getTotalID(), self.part_b.getTotalID())]
         else:
-            return ((np.zeros(3,), np.zeros(3,)), (np.eye(3), np.eye(3)), False)
+            return (
+                (
+                    np.zeros(
+                        3,
+                    ),
+                    np.zeros(
+                        3,
+                    ),
+                ),
+                (np.eye(3), np.eye(3)),
+                False,
+            )
 
     def __overlayFinished(self, exitMsg: Tuple[float, str]):
         self.overlayThread.quit()
@@ -354,7 +365,9 @@ class debugOverlay_Class(CalcDetailSimilarity, partsOverlay_Class, QtCore.QObjec
         # poseClustersSave.extend(finePoseClusters_sorted)
         # self.debugTransformations(boxTransformations_a.boxPoses[0], poseClustersSave)
 
-    def debugTransformations(self,):
+    def debugTransformations(
+        self,
+    ):
 
         self.copyParts()
 

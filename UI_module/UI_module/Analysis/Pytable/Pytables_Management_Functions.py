@@ -33,14 +33,14 @@ class PytableLeaf_Class:
         table_data_dtype: np.dtype = None,
     ):
         """
-            name = "Table"
-            pos = 1...
-            type = "Table"/"Array"
-            csvFile = Path to csv data (column titles used for h5 definition, no table_data_dtype necessary)
-            table_data_dtype = np.dtype([(Name, numpy type, optional byte),...]) =
-            np.dtype([("ID", np.int16), ("Angel", np.unicode_, 16), ("Devil", np.float64)])
-            dtype see https://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html
-            pytables see https://www.pytables.org/usersguide/datatypes.html?#id10
+        name = "Table"
+        pos = 1...
+        type = "Table"/"Array"
+        csvFile = Path to csv data (column titles used for h5 definition, no table_data_dtype necessary)
+        table_data_dtype = np.dtype([(Name, numpy type, optional byte),...]) =
+        np.dtype([("ID", np.int16), ("Angel", np.unicode_, 16), ("Devil", np.float64)])
+        dtype see https://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html
+        pytables see https://www.pytables.org/usersguide/datatypes.html?#id10
         """
         self.name = name  # type: str
         self.pos = pos  # type: int
