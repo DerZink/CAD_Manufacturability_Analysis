@@ -574,8 +574,10 @@ class tableViewModel(QtCore.QAbstractTableModel):
 
     def sort(self, col_in, order_in):
         if self.rowCount() > 0:
+            self.beginResetModel()
             if order_in == QtCore.Qt.SortOrder.AscendingOrder:
                 self._data.sort(0, order=self._headers[col_in])
             elif order_in == QtCore.Qt.SortOrder.DescendingOrder:
                 self._data[::-1].sort(0, order=self._headers[col_in])
+            self.endResetModel()
             self.layoutChanged.emit()
