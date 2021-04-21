@@ -6,5 +6,4 @@ packages/
 .vs/
 .vscode/
 __pycache__/
-UI_module/UI_module/GUI/__pycache__/
 *.txt
