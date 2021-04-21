@@ -135,7 +135,7 @@ class Ui_MainWindow(UI_DesignFile.Ui_MainWindow):
         self.tableView_partsDatabase.show()
 
         # Filtered Parts
-        self.groupBox_2.setEnabled(False)  # disable buggy filtering
+        self.groupBox_2.setEnabled(True)
         self.filterModel_partsDatabase = QtCore.QSortFilterProxyModel()
         self.filterModel_partsDatabase.setSourceModel(self.model_partsDatabase)
         self.tableView_partsDatabase_filtered.setModel(self.filterModel_partsDatabase)
