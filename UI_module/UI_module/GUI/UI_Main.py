@@ -32,7 +32,7 @@ class Ui_MainWindow(UI_DesignFile.Ui_MainWindow):
         "Please select which part(s) in database should be compared to all other parts"
     )
     statusbarMsgPreferences = ""
-    outputfilePath = os.path.join(os.getcwd(), "AnalysisOutput.txt")
+    outputfilePath = os.path.join(os.getcwd(), "LogFile.txt")
     outputFile = QtCore.QFile(outputfilePath)
 
     def setupUi(self, MainWindow):
