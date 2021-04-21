@@ -148,7 +148,7 @@ class RoughTransformationCalc:
             self.checkLocalData(self.part_b, False)
 
         if self.trained_b == False:
-            if self.noSave==False:
+            if self.noSave == False:
                 self.hash_table_a = {}  # free RAM for training
 
             # xRange, yRange, zRange = PointCloudFunctions.computeBboxStd(partData_b)

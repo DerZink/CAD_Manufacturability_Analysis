@@ -1170,4 +1170,3 @@ class CalibrationGeometricSimilarity(QtCore.QObject):
     def __saveResults__(self, x):
         self.xSolution = x
         self.finished.emit(x)
-

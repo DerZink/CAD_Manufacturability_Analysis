@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 
 import sys
-from multiprocessing import freeze_support
-from PySide2 import QtWidgets
-import time
 import warnings
+from multiprocessing import freeze_support
 
+from PySide2 import QtWidgets
 
 import GUI.UI_Main
 

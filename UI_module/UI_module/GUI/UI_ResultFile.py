@@ -432,4 +432,3 @@ class Ui_ResultForm(object):
                 "ResultForm", "Debug Compared View", None, -1
             )
         )
-

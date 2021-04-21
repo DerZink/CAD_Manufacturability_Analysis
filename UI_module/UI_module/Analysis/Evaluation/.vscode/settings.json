@@ -1,6 +1,0 @@
-{
-    "terminal.integrated.env.windows": {
-        "PYTHONPATH": "D:\\04_Arbeitsordner_lokal_sync\\feasibility_analysis\\UI_module\\UI_module",
-    },
-    "python.terminal.activateEnvInCurrentTerminal": true
-}
