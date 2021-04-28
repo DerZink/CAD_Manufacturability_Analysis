@@ -170,7 +170,7 @@ class Ui_MainWindow(UI_DesignFile.Ui_MainWindow):
         self.selectionModel_preferences = (
             self.preferencesTab_treeView.selectionModel()
         )  # type: QtCore.QItemSelectionModel
-        # self.initPrefTab()
+        self.initPrefTab()
 
     def UIslots(self):
         ######### ANALYSIS #########
