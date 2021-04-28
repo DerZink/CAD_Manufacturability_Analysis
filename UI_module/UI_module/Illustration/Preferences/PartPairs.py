@@ -122,38 +122,39 @@ class PartPairView(QtCore.QObject):
         featureH5.closeTable()
 
     def setTables(self):
-        self.partPairModel = qtModel_partPairTable(self.calibrations, self.partIDs)
+        if len(self.calibrations) > 0:
+            self.partPairModel = qtModel_partPairTable(self.calibrations, self.partIDs)
 
-        self.partPairView.partPairs_tableView.setModel(self.partPairModel)
-        delegate = CompleterDelegate(
-            self.partPairView.partPairs_tableView, self._completerSetupFunction
-        )
-        self.partPairView.partPairs_tableView.setItemDelegateForColumn(0, delegate)
-        self.partPairView.partPairs_tableView.setItemDelegateForColumn(1, delegate)
-        self.partPairView.partPairs_tableView.setColumnWidth(0, 275)
-        self.partPairView.partPairs_tableView.setColumnWidth(1, 275)
-        # self.partPairView.partPairs_tableView.setColumnWidth(2, 100)
+            self.partPairView.partPairs_tableView.setModel(self.partPairModel)
+            delegate = CompleterDelegate(
+                self.partPairView.partPairs_tableView, self._completerSetupFunction
+            )
+            self.partPairView.partPairs_tableView.setItemDelegateForColumn(0, delegate)
+            self.partPairView.partPairs_tableView.setItemDelegateForColumn(1, delegate)
+            self.partPairView.partPairs_tableView.setColumnWidth(0, 275)
+            self.partPairView.partPairs_tableView.setColumnWidth(1, 275)
+            # self.partPairView.partPairs_tableView.setColumnWidth(2, 100)
 
-        self.partPairView.partPairs_tableView.selectionModel().selectionChanged.connect(
-            self.__builtInfoWidgets__
-        )
+            self.partPairView.partPairs_tableView.selectionModel().selectionChanged.connect(
+                self.__builtInfoWidgets__
+            )
 
-        self.additionalRows = [
-            self.paths.detail_similarity,
-            self.paths.feature_similarity,
-            "GCd_1",
-            "GCd_minmax",
-            "GCn_1",
-            "GCn_minmax",
-            "GCcmin_1",
-            "GCcmin_minmax",
-            "GCcmax_1",
-            "GCcmax_minmax",
-        ]
-        self.featureBodiesModel = qtModel_featureTable(
-            self.paths, self.calibrationPartsFeaturesArray, self.additionalRows
-        )
-        self.partPairView.pairProperties_tableView.setModel(self.featureBodiesModel)
+            self.additionalRows = [
+                self.paths.detail_similarity,
+                self.paths.feature_similarity,
+                "GCd_1",
+                "GCd_minmax",
+                "GCn_1",
+                "GCn_minmax",
+                "GCcmin_1",
+                "GCcmin_minmax",
+                "GCcmax_1",
+                "GCcmax_minmax",
+            ]
+            self.featureBodiesModel = qtModel_featureTable(
+                self.paths, self.calibrationPartsFeaturesArray, self.additionalRows
+            )
+            self.partPairView.pairProperties_tableView.setModel(self.featureBodiesModel)
 
     def _completerSetupFunction(self, editor, index):
         completer = QtWidgets.QCompleter(self.partIDs, editor)
@@ -166,26 +167,28 @@ class PartPairView(QtCore.QObject):
             pass
 
     def setButtons(self):
+        if len(self.calibrations) > 0:
+            self.partPairView.pushButton_load.clicked.connect(self.__loadBodyPairs__)
+            self.partPairView.pushButton_deleteAll.clicked.connect(
+                self.partPairModel.clearData
+            )
+            self.partPairView.pushButton_reset.clicked.connect(
+                self.partPairModel.resetData
+            )
+            self.partPairView.pushButton_save.clicked.connect(self.__saveSettings__)
 
-        self.partPairView.pushButton_load.clicked.connect(self.__loadBodyPairs__)
-        self.partPairView.pushButton_deleteAll.clicked.connect(
-            self.partPairModel.clearData
-        )
-        self.partPairView.pushButton_reset.clicked.connect(self.partPairModel.resetData)
-        self.partPairView.pushButton_save.clicked.connect(self.__saveSettings__)
+            self.partPairView.pushButton_featureSimilarity.clicked.connect(
+                lambda: self.FScalibration.start(self.getSettings())
+            )
 
-        self.partPairView.pushButton_featureSimilarity.clicked.connect(
-            lambda: self.FScalibration.start(self.getSettings())
-        )
+            self.partPairView.pushButton_geometricSimilarity.clicked.connect(
+                lambda: self.GScalibration.start(self.getSettings())
+            )
 
-        self.partPairView.pushButton_geometricSimilarity.clicked.connect(
-            lambda: self.GScalibration.start(self.getSettings())
-        )
-
-        self.partPairView.pushButton_positioning.clicked.connect(
-            self.__calcSimilarities__
-        )
-        self.partPairView.pushButton_Overlay.clicked.connect(self.__buildOverlay__)
+            self.partPairView.pushButton_positioning.clicked.connect(
+                self.__calcSimilarities__
+            )
+            self.partPairView.pushButton_Overlay.clicked.connect(self.__buildOverlay__)
 
     def __loadBodyPairs__(self):
         openExplorer = QtWidgets.QFileDialog(self.partPairWidget)
