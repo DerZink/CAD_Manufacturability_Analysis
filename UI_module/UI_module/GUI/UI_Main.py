@@ -650,14 +650,14 @@ class Ui_MainWindow(UI_DesignFile.Ui_MainWindow):
     def prefSelection(self):
         index = self.preferencesTab_treeView.selectedIndexes()[0]
         item = self.model_preferences.itemFromIndex(index)
-        if not item.parent() is None:
+        if item.parent():
             parent = item.parent().text()
             subCat = item.text()
             self.setPreferenceWidget(self.widgetDict[parent, subCat])
 
     @Slot(object)
     def setPreferenceWidget(self, widget: QtWidgets.QWidget):
-        if not self.preferenceWidget is None:
+        if self.preferenceWidget:
             widgetOld = self.preferenceWidget  # type: QtWidgets.QWidget
             widgetOld.hide()
             self.gridLayout_mainWidget_preferencesTab.removeWidget(widgetOld)
